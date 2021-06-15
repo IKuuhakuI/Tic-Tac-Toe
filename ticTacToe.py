@@ -28,7 +28,6 @@ class Game ():
 		return False
 
 	def play (self, xInput, yInput):
-
 		xValue = xInput - 1
 		yValue = yInput -1
 
@@ -39,4 +38,22 @@ class Game ():
 
 			self.switchTurn()
 
-		print (self.board)
+	def printBoard (self):
+		for x in range (0, len(self.board)):
+			for y in range (0, len(self.board)):
+				if (self.board[x][y] == 1):
+					value = 'X'
+				elif (self.board[x][y] == -1):
+					value = 'O'
+				else:
+					value = ' '
+				print (value, end='')
+			
+				if y != len(self.board) - 1:
+					print (" | ", end='')
+
+			if x != len(self.board) - 1:
+				print ()
+				print ("__________\n")
+
+		print ("\n")

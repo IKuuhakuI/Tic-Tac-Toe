@@ -93,7 +93,7 @@ class Game ():
 				y += 1
 			x += 1
 	
-		if draw:
+		if draw and self.winner == 0:
 			self.winner = 2
 
 	def getWinner (self):

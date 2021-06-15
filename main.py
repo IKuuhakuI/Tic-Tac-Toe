@@ -12,7 +12,10 @@ def main ():
 
 	while inGame:
 
-		print (game.currentTurn)
+		if game.currentTurn == 1:
+			print ("X turn")
+		else:
+			print ("O turn")
 
 		isValid = False
 

@@ -43,6 +43,9 @@ def main ():
 			elif (game.getWinner() == -1):
 				print ('Winner: O')
 
+			elif (game.getWinner() == 2):
+				print ('Draw')
+
 			inGame = False
 
 main()

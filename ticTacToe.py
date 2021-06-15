@@ -2,7 +2,7 @@ class Game ():
 	def __init__ (self):
 		self.board = [[0,0,0],[0,0,0],[0,0,0]] # Empty board
 		self.currentTurn = 1 # 1 = X / -1 = O
-		self.winner = 0
+		self.winner = 0 # 1 = X / -1 = O / 2 = Draw
 
 	def switchTurn (self):
 		if self.currentTurn == 1:
@@ -80,6 +80,21 @@ class Game ():
 		self.board[0][2] == self.board[1][1] == self.board[2][0]) and\
 		self.winner == 0:
 			self.winner = self.board[1][1]
+
+		x = 0
+		draw = True
+
+		while x < len(self.board) and draw == True:
+			y = 0
+			while y < len(self.board) and draw == True:
+				if 0 == self.board[x][y]:
+					draw = False
+
+				y += 1
+			x += 1
+	
+		if draw:
+			self.winner = 2
 
 	def getWinner (self):
 		return self.winner
